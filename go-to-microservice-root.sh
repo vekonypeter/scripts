@@ -1,9 +1,9 @@
 #!/bin/bash
 
-function irm {
+function msroot {
     if [[ $1 == "-h" ]] || [[ $1 == "--help" ]]
     then
-        echo "irm: install and run a microservice if the current working directory is somewhere under the project's folder"
+        echo "msroot: change the current working directory to the root folder of the microservice"
         return
     fi
     
@@ -16,8 +16,7 @@ function irm {
         repoRootPath=$reposPath$repoName
         
         cd $repoRootPath
-        mvn-install-run
     else
-        echo ">> ERROR: You are currently not in a project folder under ~/Repositories"
+        echo ">> ERROR: You are currently not in a microservice folder under ~/Repositories"
     fi
 }
