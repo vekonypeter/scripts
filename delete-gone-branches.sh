@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ "$1" == "-h" ] || [ "$1" == "--help" ]
+then
+    echo "dgb: delete all local git branches that lost their remote tracking counterparts"
+    exit 1
+fi
+
 branchnames=($(git branch -v | grep '\[gone\]' | awk '{print $1}'))
 count=${#branchnames[@]}
 
