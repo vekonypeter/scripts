@@ -12,10 +12,15 @@ if [ -z "$files" ]
 then
     echo "No package-lock.json found"
 else
-    echo "Found the following package-locks:"
+    echo "Deleting the following files:"
     echo "  ${files//[[:space:]]/\\n  }"
 
-    read -p 'Do you want to delete them? (Y/N) ' deleteFiles
+    if [ "$1" == "-f" ] || [ "$1" == "--force" ]
+    then
+        deleteFiles="Y"
+    else
+        read -p 'Are you sure? (Y/N) ' deleteFiles
+    fi
 
     if [ "$deleteFiles" == "Y" ] || [ "$deleteFiles" == "y" ]
     then
