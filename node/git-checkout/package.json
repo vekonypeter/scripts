@@ -2,10 +2,10 @@
   "name": "git-checkout",
   "version": "1.0.0",
   "description": "",
-  "main": "bin/index.js",
+  "main": "index.js",
   "author": "",
   "license": "ISC",
   "bin": {
-    "co": "./bin/index.js"
+    "co": "./index.js"
   }
 }
